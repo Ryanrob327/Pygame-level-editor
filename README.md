@@ -6,7 +6,7 @@
 
 - Import tile sets
 - Select tiles to be placed on map
-- Move with WASD
+- Move with arrow keys
 - Change level with PgUp or PgDn
 - Save levels as CSV files
 - Load levels as CSV files
