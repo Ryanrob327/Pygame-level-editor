@@ -43,12 +43,12 @@ scroll_speed = 1
 margin_scroll = 0
 
 #images
-save_img = pygame.image.load('save_btn.png').convert_alpha()
-load_img = pygame.image.load('load_btn.png').convert_alpha()
+save_img = pygame.image.load('Pygame-level-editor/save_btn.png').convert_alpha()
+load_img = pygame.image.load('Pygame-level-editor/load_btn.png').convert_alpha()
 #import tile list
 img_list = []
 for x in range(tile_types):
-    img = pygame.image.load(f'Tileset - TanksNTroops/{x}.png').convert_alpha()
+    img = pygame.image.load(f'Pygame-level-editor/Tileset - TanksNTroops/{x}.png').convert_alpha()
     img = pygame.transform.scale(img, (tile_size, tile_size))
     img_list.append(img)
 
@@ -115,14 +115,14 @@ while run:
 
     #save and load data
     if save_button.draw(screen):
-        with open(f'Levels - TanksNTroops/level{level}_data_TNT.csv', 'w', newline='') as csvfile:
+        with open(f'Pygame-level-editor/Levels - TanksNTroops/level{level}_data_TNT.csv', 'w', newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter = ',')
             for row in world_data:
                 writer.writerow(row)
     if load_button.draw(screen):
         x_scroll = 0
         y_scroll = 0
-        with open(f'Levels - TanksNTroops/level{level}_data_TNT.csv', newline='') as csvfile:
+        with open(f'Pygame-level-editor/Levels - TanksNTroops/level{level}_data_TNT.csv', newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter = ',')
             for x, row in enumerate(reader):
                 for y, tile in enumerate(row):
